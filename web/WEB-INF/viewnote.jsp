@@ -15,7 +15,13 @@
         <h1>Simple Note Keeper</h1>
         <h2>View Note</h2>
         <form method="get" action="editnote.jsp">
-            
+            <b>Title: </b><span name="title">${note.title}</span>
+            <br>
+            <br>
+            <b>Contents:</b>
+            <br><span name="content">${note.contents}</span>
+            <br>
+            <br><a href="note?editnote.jsp">Edit</a>
         </form>
     </body>
 </html>
