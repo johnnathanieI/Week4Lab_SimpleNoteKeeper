@@ -20,7 +20,6 @@
             <br>
             <b>Contents:</b>
             <br><span name="content">${note.contents}</span>
-            <br>
             <br><a href="note?editnote.jsp">Edit</a>
         </form>
     </body>

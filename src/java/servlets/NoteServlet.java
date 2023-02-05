@@ -30,22 +30,24 @@ public class NoteServlet extends HttpServlet {
         // to retrieve the data from BufferedReader
         StringBuilder sb = new StringBuilder();
 
+        Note note = new Note();
         String line = br.readLine();
         String title = line;
+        note.setTitle(title);
         
         String contentReader = br.readLine();
         
         //Checks if there is a next line and if there is it gets added into content and breaks into a new line
         if (br.ready()) {
             do {
-                sb.append(contentReader + "<br>");
+                sb.append(contentReader).append("<br>");
                 contentReader = br.readLine();
             } while (contentReader != null);
         }
         
         String content = sb.toString();
         
-        Note note = new Note(title, content);
+        note.setContents(content);
         
         request.setAttribute("note", note);
 
