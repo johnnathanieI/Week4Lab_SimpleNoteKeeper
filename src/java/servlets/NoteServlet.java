@@ -24,9 +24,8 @@ public class NoteServlet extends HttpServlet {
             throws ServletException, IOException {
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
         // to read files
-        BufferedReader br = new BufferedReader(new FileReader(new File(path)));
-        // to write to a file
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+        BufferedReader br = new BufferedReader(new 
+        FileReader(new File(path)));
         // to retrieve the data from BufferedReader
         StringBuilder sb = new StringBuilder();
 
@@ -37,13 +36,14 @@ public class NoteServlet extends HttpServlet {
         
         String contentReader = br.readLine();
         
-        //Checks if there is a next line and if there is it gets added into content and breaks into a new line
-        if (br.ready()) {
+        /*
+        Checks if there is a next line and if there is it gets added into 
+        content and breaks into a new line at the end of line
+        */
             do {
                 sb.append(contentReader).append("<br>");
                 contentReader = br.readLine();
             } while (contentReader != null);
-        }
         
         String content = sb.toString();
         
