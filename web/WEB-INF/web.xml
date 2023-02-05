@@ -3,6 +3,16 @@
     <servlet>
         <servlet-name>NoteServlet</servlet-name>
         <servlet-class>servlets.NoteServlet</servlet-class>
+        <init-param>
+            <description>viewnote.jsp</description>
+            <param-name>view</param-name>
+            <param-value>viewnote.jsp</param-value>
+        </init-param>
+        <init-param>
+            <description>editnote.jsp</description>
+            <param-name>edit</param-name>
+            <param-value>editnote.jsp</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>NoteServlet</servlet-name>
